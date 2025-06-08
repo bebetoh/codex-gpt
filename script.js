@@ -1,3 +1,4 @@
+
 // Elementos da interface
 const taskInput = document.getElementById('task-input');
 const addButton = document.getElementById('add-button');
@@ -7,17 +8,29 @@ const themeSelect = document.getElementById('theme-select');
 let tasks = [];
 
 // Carrega as tarefas salvas do localStorage
+
+const taskInput = document.getElementById('task-input');
+const addButton = document.getElementById('add-button');
+const taskList = document.getElementById('task-list');
+
+let tasks = [];
+
+
 function loadTasks() {
     const stored = localStorage.getItem('tasks');
     tasks = stored ? JSON.parse(stored) : [];
 }
 
+
 // Salva a lista atual de tarefas no localStorage
+
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+
 // Atualiza a lista na tela
+
 function renderTasks() {
     taskList.innerHTML = '';
     tasks.forEach(task => {
@@ -52,6 +65,7 @@ function renderTasks() {
     });
 }
 
+
 // Aplica o tema selecionado (claro, escuro ou sistema)
 function applyTheme(theme) {
     if (theme === 'system') {
@@ -69,6 +83,7 @@ function loadTheme() {
 }
 
 // Adiciona uma nova tarefa na lista
+
 addButton.addEventListener('click', () => {
     const text = taskInput.value.trim();
     if (!text) return;
@@ -83,12 +98,15 @@ addButton.addEventListener('click', () => {
     taskInput.value = '';
 });
 
+
 // Permite adicionar tarefas pressionando Enter
+
 taskInput.addEventListener('keypress', e => {
     if (e.key === 'Enter') {
         addButton.click();
     }
 });
+
 
 // Alteração do tema pela interface
 themeSelect.addEventListener('change', () => {
@@ -99,4 +117,7 @@ themeSelect.addEventListener('change', () => {
 
 loadTasks();
 loadTheme();
+
+loadTasks();
+
 renderTasks();

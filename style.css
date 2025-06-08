@@ -22,6 +22,7 @@
     }
 }
 
+/* Força tema claro */
 [data-theme='light'] {
     --bg-color: #f4f4f4;
     --text-color: #000;
@@ -32,6 +33,7 @@
     --delete-color: #c00;
 }
 
+/* Força tema escuro */
 [data-theme='dark'] {
     --bg-color: #121212;
     --text-color: #eee;
@@ -58,12 +60,6 @@ body {
     box-shadow: 0 0 10px var(--shadow-color);
 }
 
-.new-task {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
 .theme-selector {
     display: flex;
     align-items: center;
@@ -74,6 +70,12 @@ body {
 #theme-select {
     padding: 4px;
     font-size: 14px;
+}
+
+.new-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 #task-input {
